@@ -6,6 +6,9 @@ mount -t nfs -o vers=3 192.168.0.96:/nfs-share /mnt
 ls -l /mnt
 cat <<EOF | sudo tee /etc/fstab
 192.168.0.96:/nfs-share  nfs  defaults  0  0
+E
 mount -a
 df -h
+systemctl start rpcbind
+systemctl enable rpcbind
 #umount /mnt
