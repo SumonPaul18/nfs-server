@@ -13,12 +13,9 @@ Verifying NFS Disk Usage
 ####    
     du -sh /nfs/home
 ####
-Explanation about the options used in the above command.
-
-- rw: Stands for Read/Write.
-- sync: Requires changes to be written to the disk before they are applied.
-- No_subtree_check: Eliminates subtree checking.
-
+rpcinfo -p nfs-server-ip
+####
+    rpcinfo -p 10.77.123.50
 ####
 
 
