@@ -7,3 +7,7 @@ Verifying Which Port Using for NFS Server
 ####
     rpcinfo -p | grep nfs
 ####
+Verifying NFS Disk Usage
+####
+#du -sh /nfs-mounted-volume   
+    du -sh /nfs/home
