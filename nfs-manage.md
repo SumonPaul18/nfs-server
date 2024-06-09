@@ -1,7 +1,7 @@
 ####
 Verifying NFS Server from Client
 ####
-    showmount -e your_nfs_server_ip
+    showmount -e 192.168.0.96
 ####
 Verifying Which Port Using for NFS Server 
 ####
@@ -9,13 +9,14 @@ Verifying Which Port Using for NFS Server
 ####
 Verifying NFS Disk Usage
 ####
-#du -sh /nfs-mounted-volume   
+Verifying NFS Volume loading <br>
+Ex: du -sh /nfs-mounted-volume   
 ####    
-    du -sh /nfs/home
+    du -sh /nfs-share
 ####
-rpcinfo -p nfs-server-ip
+rpcinfo -p 192.168.0.96
 ####
-    rpcinfo -p 10.77.123.50
+    rpcinfo -p 192.168.0.96
 ####
 
 
