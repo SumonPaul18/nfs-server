@@ -7,7 +7,7 @@ systemctl enable nfs-kernel-server
 mkdir -p /nfs-share
 chown -R nobody:nogroup /nfs-share
 chmod 777 /nfs-share
-cat <<EOF | sudo tee /etc/exports
+cat <<EOF | sudo tee -a /etc/exports
 /nfs-share 192.168.0.0/24(rw,sync,no_subtree_check)
 EOF
 exportfs -a
