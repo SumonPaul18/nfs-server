@@ -9,6 +9,8 @@ chown -R nobody:nogroup /nfs-share
 chmod 777 /nfs-share
 cat <<EOF | sudo tee -a /etc/exports
 /nfs-share 192.168.0.0/24(rw,sync,no_subtree_check)
+#/nfs-share 192.168.0.0/24(rw,sync,no_subtree_check,insecure,no_root_squash)
+#/nfs-share *(rw,sync,no_subtree_check)
 EOF
 exportfs -a
 showmount -e
