@@ -18,5 +18,14 @@ Verifying NFS Using Ports:
 ####
     rpcinfo -p 192.168.0.96
 ####
-
-
+Error: Unmask a Masked Service in Systemd
+####
+    sudo systemctl status nfs-common
+####
+    sudo systemctl is-enabled nfs-common
+    sudo rm /lib/systemd/system/nfs-common.service
+    sudo systemctl daemon-reload
+    sudo systemctl enable nfs-common
+    sudo systemctl start nfs-common
+    sudo systemctl status nfs-common
+####
