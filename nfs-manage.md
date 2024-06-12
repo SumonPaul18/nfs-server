@@ -1,6 +1,18 @@
 #
 ## Managing NFS Storage
-
+####
+Restart nfs-kernel-server
+####
+    systemctl restart nfs-kernel-server
+####
+Verifying NFS Share Entry
+####
+    exportfs -a
+####
+Verifying NFS Share Available
+####
+    showmount -e
+####    
 Verifying NFS Server from Client:
 ####
     showmount -e 192.168.0.96
@@ -21,6 +33,8 @@ Verifying NFS Using Ports:
 Error: Unmask a Masked Service in Systemd
 ####
     sudo systemctl status nfs-common
+####
+<b>Solution:</b>
 ####
     sudo systemctl is-enabled nfs-common
     sudo rm /lib/systemd/system/nfs-common.service
