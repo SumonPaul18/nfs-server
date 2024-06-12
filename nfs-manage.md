@@ -30,7 +30,7 @@ Verifying NFS Using Ports:
 ####
     rpcinfo -p 192.168.0.96
 ####
-Error: Unmask a Masked Service in Systemd
+<b>Error:</b> Unmask a Masked Service in Systemd
 ####
     sudo systemctl status nfs-common
 ####
