@@ -34,7 +34,7 @@ Verifying NFS Using Ports:
 ####
     sudo systemctl status nfs-common
 ####
-<b>Solution:</b>
+<b><i>Solution:</b></i>
 ####
     sudo systemctl is-enabled nfs-common
     sudo rm /lib/systemd/system/nfs-common.service
