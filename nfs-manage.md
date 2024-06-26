@@ -1,5 +1,12 @@
 #
 ## Managing NFS Storage
+Verifying NFS Server Status
+####
+    systemctl status nfs-kernel-server
+####
+Verifying NFS Client Status
+####
+    systemctl status nfs-common
 ####
 Restart nfs-kernel-server
 ####
