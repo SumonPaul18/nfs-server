@@ -12,7 +12,7 @@ Restart nfs-kernel-server
 ####
     systemctl restart nfs-kernel-server
 ####
-Verifying NFS Share Entry
+Verifying NFS Share Entry From <b>NFS Server</b>
 ####
     exportfs -a
 ####
@@ -23,6 +23,10 @@ Verifying NFS Share Available
 Verifying NFS Server from Client:
 ####
     showmount -e 192.168.0.96
+####
+Mount NFS to Client
+####
+    mount 192.168.0.96:/nfs-share /nfs-share
 ####
 Verifying Which Port Using for NFS Server: 
 ####
