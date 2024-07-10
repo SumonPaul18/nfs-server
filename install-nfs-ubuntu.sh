@@ -4,6 +4,7 @@ apt update -y
 apt install nfs-kernel-server -y
 systemctl start nfs-kernel-server
 systemctl enable nfs-kernel-server
+systemctl is-active --quiet nfs-kernel-server && echo nfs-kernel-server is running
 mkdir -p /nfs-share
 chown -R nobody:nogroup /nfs-share
 chmod 777 /nfs-share
