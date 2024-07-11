@@ -35,6 +35,10 @@ Mount NFS Share Automatically After Reboot
     192.168.0.96:/nfs-share /nfs-share  nfs      defaults    0       0
     EOF
 ####
+Unmount NFS share from Client
+####
+    umount 192.168.0.96:/nfs-share /nfs-share
+####
 Verifying Which Port Using for NFS Server: 
 ####
     rpcinfo -p | grep nfs
