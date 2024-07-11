@@ -28,6 +28,13 @@ Mount NFS to Client
 ####
     mount 192.168.0.96:/nfs-share /nfs-share
 ####
+Mount NFS Share Automatically After Reboot
+####
+    cp /etc/fstab /etc/fstab.copy
+    cat <<EOF | sudo tee -a /etc/fstab
+    192.168.0.96:/nfs-share /nfs-share  nfs      defaults    0       0
+    EOF
+####
 Verifying Which Port Using for NFS Server: 
 ####
     rpcinfo -p | grep nfs
