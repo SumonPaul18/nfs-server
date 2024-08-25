@@ -12,7 +12,11 @@ Restart nfs-kernel-server
 ####
     systemctl restart nfs-kernel-server
 ####
-Verifying NFS Share Entry From <b>NFS Server</b>
+Apply NFS Share Entry in fstab From <b>NFS Server</b>
+####
+    exportfs -a
+####
+Restart fstab After Entry From <b>NFS Server</b>
 ####
     exportfs -a
 ####
