@@ -8,7 +8,7 @@ Verifying NFS Client Status
 ####
     systemctl status nfs-common
 ####
-Restart nfs-kernel-server
+Restart nfs-kernel-server From <b>NFS Server</b>
 ####
     systemctl restart nfs-kernel-server
 ####
