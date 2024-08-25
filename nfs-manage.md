@@ -1,10 +1,10 @@
 #
 ## Managing NFS Storage
-Verifying NFS Server Status
+Verifying NFS Server Status From <b>NFS Server</b>
 ####
     systemctl status nfs-kernel-server
 ####
-Verifying NFS Client Status
+Verifying NFS Client Status From <b>NFS Client</b>
 ####
     systemctl status nfs-common
 ####
@@ -24,11 +24,11 @@ Verifying NFS Share Available
 ####
     showmount -e
 ####    
-Verifying NFS Server from Client:
+Verifying NFS Server From <b>NFS Server</b>
 ####
     showmount -e 192.168.0.96
 ####
-Mount NFS to Client
+Mount NFS to Client From <b>NFS Client</b>
 ####
     mount 192.168.0.96:/nfs-share /nfs-share
 ####
@@ -39,7 +39,7 @@ Mount NFS Share Automatically After Reboot
     192.168.0.96:/nfs-share /nfs-share  nfs      defaults    0       0
     EOF
 ####
-Unmount NFS share from Client
+Unmount NFS share From <b>NFS Client</b>
 ####
     umount 192.168.0.96:/nfs-share /nfs-share
 ####
