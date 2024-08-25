@@ -4,6 +4,11 @@ apt update -y
 apt install nfs-common -y
 systemctl start nfs-common
 systemctl enable nfs-common
+systemctl is-enabled nfs-common
+rm /lib/systemd/system/nfs-common.service
+systemctl daemon-reload
+systemctl enable nfs-common
+systemctl start nfs-common
 systemctl is-active --quiet nfs-common && echo nfs-common is running
 mkdir -p /nfs-share
 chmod 777 /nfs-share
