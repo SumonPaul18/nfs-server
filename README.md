@@ -1,13 +1,13 @@
-#
 ## Installation and Configuration NFS Server on Ubuntu 22.04.x: 
-### Run on NFS Server
+### Run on NFS Server Host
 #### 
     git clone https://github.com/SumonPaul18/nfs-server.git
     chmod +x -R nfs-server/nfs-server-ubuntu.sh
     . nfs-server/nfs-server-ubuntu.sh
 #### 
+#### After run, your default share directory is `/nfs-share`
 ## How to Connect with NFS Server to NFS Client on Ubuntu 22.04.x: 
-### Run on NFS Client
+### Run on NFS Client Host
 #### 
     git clone https://github.com/SumonPaul18/nfs-server.git
     chmod +x -R nfs-server/nfs-client-ubuntu.sh
