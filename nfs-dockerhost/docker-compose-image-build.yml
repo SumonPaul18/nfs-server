@@ -1,0 +1,55 @@
+
+nano Dockerfile
+
+#
+FROM mysql:latest
+RUN chown -R 1000:1000 /var/lib/mysql
+RUN chmod -R 777 /var/lib/mysql
+CMD ["mysqld"]
+#
+
+docker build -t mysql:chown .
+
+nano docker-compose.yml
+
+##
+version: "2.2"
+services:
+  db:
+    image: mysql:chown
+    restart: always
+    volumes:
+      - nfsvolume:/var/lib/mysql:rw
+    tty: true
+    environment:
+      MYSQL_ROOT_PASSWORD: centos@123
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: sysadmin
+      MYSQL_PASSWORD: centos@123
+  wordpress:
+    depends_on:
+      - db
+    image: wordpress:latest
+    restart: always
+    ports:
+      - "8001:80"
+    environment:
+      WORDPRESS_DB_HOST: db:3306
+      WORDPRESS_DB_USER: sysadmin
+      WORDPRESS_DB_PASSWORD: centos@123
+      WORDPRESS_DB_NAME: wordpress
+    volumes:
+      - nfsvolume:/var/www/html:rw
+    tty: true
+volumes:
+  nfsvolume:
+    driver: local
+    driver_opts:
+      type: "nfs"
+      o: "addr=192.168.0.96,rw,nfsvers=4"
+      device: ":/nfs-share"
+
+##
+
+
+
