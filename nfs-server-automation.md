@@ -317,7 +317,7 @@ ansible-playbook -i inventory.ini nfs-client.yml
 ```
 
 > 🔐 Never uses `*` or `no_root_squash` in production.
-```
+
 
 ---
 
